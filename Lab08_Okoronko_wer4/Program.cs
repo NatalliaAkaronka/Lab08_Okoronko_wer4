@@ -13,21 +13,18 @@ namespace Lab08_Okoronko_wer4
         static StreamWriter вывод = new StreamWriter("Names.txt");
         static void Main(string[] args)
         {
-            string[] way = ввод.ReadLine().Trim().Split(',');
-                //foreach (string s in way)
-               // {
-                    //Console.WriteLine(s);
-                //}
-            
-            foreach (string s in way)
+            string way;
+            while ((way= ввод.ReadLine()) !=null)
             {
-                string way2 = s.Remove(s.Length - 4);
+                string way2 = way.Remove(way.Length - 4);
                 //Console.WriteLine(way2);
                 string[] words = way2.Split('\\');
                 int number = words.Length;
                 //Console.WriteLine(words[number - 1]);
                 вывод.WriteLine(words[number - 1]+" ");
             }
+
+            
             вывод.Close();
             Console.WriteLine("Нажмите Enter для обработки результатов.");
             Console.ReadLine();
